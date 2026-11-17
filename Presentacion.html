@@ -674,6 +674,76 @@
     }
 
     /* ==========================================================================
+       TABLAS DE PLANTILLAS (CONTENIDO DE TEMPLATE-BTN • CERO DESBORDE)
+       ========================================================================== */
+    .template-doc {
+      min-width: 0;
+      overflow-x: auto;
+      -webkit-overflow-scrolling: touch;
+    }
+
+    .template-doc h4 {
+      font-family: var(--font-display);
+      font-size: 16px;
+      letter-spacing: 0.06em;
+      color: var(--color-ink);
+      margin: 0 0 12px;
+    }
+
+    .template-doc p {
+      font-size: 13.5px;
+      line-height: 1.5;
+      color: var(--color-ink-light);
+      margin: 0 0 12px;
+    }
+
+    .template-table {
+      width: 100%;
+      table-layout: fixed;
+      border-collapse: collapse;
+      background: var(--color-pure-white);
+      border: 1px solid var(--color-mist);
+      font-size: 12.5px;
+      line-height: 1.45;
+      color: var(--color-ink);
+    }
+
+    .template-table th {
+      background: var(--color-deep-indigo);
+      color: var(--color-pure-white);
+      font-size: 10px;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      text-align: left;
+      padding: 9px 10px;
+      vertical-align: bottom;
+      border: 1px solid rgba(255, 255, 255, 0.18);
+    }
+
+    .template-table td {
+      padding: 9px 10px;
+      border: 1px solid var(--color-mist);
+      vertical-align: top;
+      overflow-wrap: anywhere;
+      word-break: normal;
+    }
+
+    .template-table tbody tr:nth-child(even) td {
+      background: var(--color-bone);
+    }
+
+    @media (max-width: 620px) {
+      .template-table {
+        font-size: 11.5px;
+      }
+      .template-table th,
+      .template-table td {
+        padding: 6px 7px;
+      }
+    }
+
+    /* ==========================================================================
        CONSOLA DE PROMPTS (CAJA NEGRA TIPO TERMINAL • SELECCIONABLE)
        ========================================================================== */
     .prompt-console {
