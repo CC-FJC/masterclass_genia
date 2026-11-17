@@ -758,6 +758,110 @@
     }
 
     /* ==========================================================================
+       PLANTILLAS GENIA EDITABLES (PORTADAS DE plantillas_formatoGENIA.html)
+       ========================================================================== */
+    .template-doc .card-meta-line {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 12px;
+      border-bottom: 1px solid var(--color-mist);
+      padding-bottom: 10px;
+      margin-bottom: 16px;
+    }
+
+    .template-doc .template-name {
+      font-family: var(--font-display);
+      font-size: 22px;
+      color: var(--color-electric-indigo);
+      letter-spacing: 0.03em;
+    }
+
+    .template-doc .tag-badge-solid,
+    .template-doc .tag-badge-orange {
+      background: var(--color-electric-indigo);
+      color: var(--color-pure-white);
+      padding: 4px 10px;
+      border-radius: 3px;
+      font-size: 10.5px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      white-space: nowrap;
+      flex-shrink: 0;
+    }
+
+    .template-doc .tag-badge-orange {
+      background: var(--color-patch-orange);
+    }
+
+    .template-doc .template-instructions {
+      background: var(--color-bone);
+      border-left: 3px solid var(--color-electric-indigo);
+      padding: 12px 16px;
+      margin-bottom: 18px;
+      font-size: 13.5px;
+      color: #333333;
+      line-height: 1.45;
+    }
+
+    .template-doc label.field-tag {
+      display: block;
+      font-size: 11px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: var(--color-electric-indigo);
+      margin-bottom: 6px;
+    }
+
+    .template-doc input[type="text"],
+    .template-doc textarea {
+      width: 100%;
+      background: var(--color-pure-white);
+      border: 1px solid #c9cdd8;
+      border-radius: var(--radius-buttons);
+      padding: 10px 12px;
+      font-family: var(--font-body);
+      font-size: 13.5px;
+      color: var(--color-ink);
+      line-height: 1.45;
+      outline: none;
+      transition: border-color 0.15s ease, box-shadow 0.15s ease;
+    }
+
+    .template-doc input[type="text"]:focus,
+    .template-doc textarea:focus {
+      border-color: var(--color-electric-indigo);
+      box-shadow: 0 0 0 1px var(--color-electric-indigo);
+      background: #fafbff;
+    }
+
+    .template-doc textarea {
+      min-height: 84px;
+      resize: vertical;
+    }
+
+    .template-doc .textarea-lg {
+      min-height: 110px;
+      font-size: 15px;
+    }
+
+    .template-doc .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+    .template-doc .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
+    .template-doc .grid-4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; }
+    .template-doc .grid-lean { display: grid; grid-template-columns: 1.2fr 1fr 1.2fr; gap: 14px; }
+
+    @media (max-width: 720px) {
+      .template-doc .grid-2,
+      .template-doc .grid-3,
+      .template-doc .grid-4,
+      .template-doc .grid-lean {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    /* ==========================================================================
        CONSOLA DE PROMPTS (CAJA NEGRA TIPO TERMINAL • SELECCIONABLE)
        ========================================================================== */
     .prompt-console {
@@ -1220,7 +1324,7 @@
   <!-- BARRA DE CONTROL INFERIOR -->
   <footer class="deck-footer">
     <div class="footer-left">
-      <span>MÓDULO <span class="slide-num-badge" id="slide-num">01 / 16</span></span>
+      <span>MÓDULO <span class="slide-num-badge" id="slide-num">01 / 15</span></span>
       <span class="brand-v-rule" style="height: 16px; background: #ccc;"></span>
       <span id="block-indicator" style="font-size: 11px; color: #555;">BLOQUE 1: BIENVENIDA & CONTEXTO</span>
     </div>
@@ -1232,7 +1336,7 @@
   </footer>
 
   <!-- ==========================================================================
-       DATOS METODOLÓGICOS Y LÓGICA DE CONTROL (16 SLIDES • BLOQUES 1 AL 6)
+       DATOS METODOLÓGICOS Y LÓGICA DE CONTROL (15 SLIDES • BLOQUES 1 AL 6)
        ========================================================================== -->
   <script>
     const SLIDES_DATA = [
@@ -1391,7 +1495,12 @@
         }
       }
     ],
-    "rigor": "SECUENCIA CANÓNICA GENIA: Cada fase se alimenta de la evidencia de la anterior. No se salta de la queja a la solución."
+    "rigor": "SECUENCIA CANÓNICA GENIA: Cada fase se alimenta de la evidencia de la anterior. No se salta de la queja a la solución.",
+    "templateBtn": {
+      "label": "VER PLANTILLA: G.1 DEFINICIÓN DEL RETO (HMW)",
+      "title": "PLANTILLA G.1: DEFINICIÓN DEL RETO (FÓRMULA HMW)",
+      "html": "<div class=\"template-doc\"><div class=\"card-meta-line\">\n          <h3 class=\"template-name\">PLANTILLA G.1: DEFINICIÓN DEL RETO (FÓRMULA HMW)</h3>\n          <span class=\"tag-badge-orange\">ENTREGABLE DE ENTRADA</span>\n        </div>\n\n        <div class=\"template-instructions\">\n          <strong>Propósito:</strong> Transformar quejas abstractas en una pregunta orientada a la acción técnica.<br>\n          <strong>Fórmula Canónica:</strong> ¿Cómo podríamos nosotros [Acción deseada] para [Usuario/Comunidad específica] de modo que [Impacto positivo medible]?\n        </div>\n\n        <div class=\"grid-3\" style=\"margin-bottom: 16px;\">\n          <div>\n            <label class=\"field-tag\" for=\"g_usuario\">1. ¿Para quién se diseña? (Usuario)</label>\n            <input type=\"text\" id=\"g_usuario\" placeholder=\"Ej: Caficultores familiares de microlotes de alta montaña...\">\n          </div>\n          <div>\n            <label class=\"field-tag\" for=\"g_variable\">2. ¿Qué variable se controla? (Acción)</label>\n            <input type=\"text\" id=\"g_variable\" placeholder=\"Ej: Estandarizar la fermentación y deshidratar pulpa limpia...\">\n          </div>\n          <div>\n            <label class=\"field-tag\" for=\"g_impacto\">3. ¿Qué impacto medible se busca?</label>\n            <input type=\"text\" id=\"g_impacto\" placeholder=\"Ej: Calificar > 85 SCA y obtener 40% de sobreprecio...\">\n          </div>\n        </div>\n\n        <div>\n          <label class=\"field-tag\" for=\"g_reto_final\">TU PREGUNTA DE RETO HMW CONSOLIDADA</label>\n          <textarea id=\"g_reto_final\" class=\"textarea-lg\" placeholder=\"¿Cómo podríamos nosotros estandarizar el punto óptimo de fermentación de microlotes y valorizar la pulpa de café con herramientas accesibles y de bajo costo en finca, de modo que podamos cerrar ventas de café especial con puntajes mayores a 85 SCA?\"></textarea>\n        </div></div>"
+    }
   },
   {
     "phase": "E",
@@ -1451,12 +1560,7 @@
         }
       }
     ],
-    "rigor": "EXPLORACIÓN RIGUROSA: No se aceptan soluciones precipitadas sin haber mapeado el estado del arte y los actores del sistema.",
-    "templateBtn": {
-      "label": "VER PLANTILLA: MAPA DE ACTORES Y ESTADO DEL ARTE",
-      "title": "PLANTILLA TÉCNICA: ESTADO DEL ARTE & MAPEO DE ECOSISTEMA",
-      "html": "\n        <div class=\"template-doc\">\n          <h4>MATRIZ DE EXPLORACIÓN DE CONTEXTO (GENIA FASE E)</h4>\n          <p>Diligencia esta matriz con tu equipo antes de proceder al trabajo de campo:</p>\n          <table class=\"template-table\">\n            <thead>\n              <tr>\n                <th>Nivel</th>\n                <th>Actores / Fuentes</th>\n                <th>Lo que Sabemos (Datos)</th>\n                <th>Puntos Ciegos (Por Validar)</th>\n                <th>Prompt de IA Aplicado</th>\n              </tr>\n            </thead>\n            <tbody>\n              <tr>\n                <td><strong>1. Estado del Arte</strong></td>\n                <td>Catálogos de WhatsApp Business, tiendas de Instagram y tutoriales en video</td>\n                <td>Las herramientas gratis cubren lo básico, pero ninguna avisa qué producto se acaba ni recuerda cobrar.</td>\n                <td>¿Qué pasa hoy cuando Sofía no alcanza a responder un mensaje?</td>\n                <td>Prompt de benchmarking de herramientas</td>\n              </tr>\n              <tr>\n                <td><strong>2. Netnografía</strong></td>\n                <td>Grupos de tenderos del municipio en Facebook y WhatsApp</td>\n                <td>Más de 30 menciones de pedidos olvidados y deudas sin cobrar.</td>\n                <td>¿Dónde anota Sofía hoy los pedidos y los fiados?</td>\n                <td>Prompt de clustering de frustraciones</td>\n              </tr>\n              <tr>\n                <td><strong>3. Núcleo Humano</strong></td>\n                <td>Don Hernando y Sofía (centro); clientes del barrio y proveedores; otros tenderos</td>\n                <td>Atienden solos el celular mientras atienden la fila de la tienda.</td>\n                <td>¿Qué pasa si la herramienta no funciona dentro de WhatsApp?</td>\n                <td>Prompt de roles y perfiles empáticos</td>\n              </tr>\n            </tbody>\n          </table>\n        </div>\n      "
-    }
+    "rigor": "EXPLORACIÓN RIGUROSA: No se aceptan soluciones precipitadas sin haber mapeado el estado del arte y los actores del sistema."
   },
   {
     "phase": "E",
@@ -1515,12 +1619,7 @@
         }
       }
     ],
-    "rigor": "ETNOGRAFÍA ANTES QUE OPINIÓN: Los dolores deben documentarse con fotos, notas in situ y curvas de recorrido verificables.",
-    "templateBtn": {
-      "label": "VER PLANTILLA: BITÁCORA ETNOGRÁFICA Y MATRIZ 2X2",
-      "title": "PLANTILLA TÉCNICA: BITÁCORA DE OBSERVACIÓN Y PRIORIZACIÓN",
-      "html": "\n        <div class=\"template-doc\">\n          <h4>GUÍA DE OBSERVACIÓN ETNOGRÁFICA & MATRIZ 2X2 (GENIA FASE E)</h4>\n          <table class=\"template-table\">\n            <thead>\n              <tr>\n                <th>Herramienta</th>\n                <th>Objetivo de Aprendizaje</th>\n                <th>Datos a Registrar</th>\n                <th>Prompt IA Recomendado</th>\n              </tr>\n            </thead>\n            <tbody>\n              <tr>\n                <td><strong>Mosca en la Pared</strong></td>\n                <td>Captar hábitos no conscientes sin sesgar al usuario</td>\n                <td>Posturas, tiempos muertos, miradas, herramientas improvisadas</td>\n                <td>Prompt de clustering de micro-fricciones</td>\n              </tr>\n              <tr>\n                <td><strong>Mapa de Recorrido</strong></td>\n                <td>Graficar la montaña rusa emocional del usuario</td>\n                <td>Etapas temporales, puntos de contacto, frustraciones, picos de estrés</td>\n                <td>Prompt generador de curvas emocionales</td>\n              </tr>\n              <tr>\n                <td><strong>Matriz 2x2</strong></td>\n                <td>Filtrar lo urgente vs lo importante con objetividad</td>\n                <td>Eje X (Factibilidad/Esfuerzo), Eje Y (Severidad/Frecuencia)</td>\n                <td>Prompt de scoring y cuadrantes</td>\n              </tr>\n            </tbody>\n          </table>\n        </div>\n      "
-    }
+    "rigor": "ETNOGRAFÍA ANTES QUE OPINIÓN: Los dolores deben documentarse con fotos, notas in situ y curvas de recorrido verificables."
   },
   {
     "phase": "E",
@@ -1594,9 +1693,9 @@
     ],
     "rigor": "SEPARACIÓN TAJANTE: Prohibido confundir una evidencia con una causa. El insight debe abrir una puerta tecnológica medible.",
     "templateBtn": {
-      "label": "VER PLANTILLA: MATRIZ DE CUATRO NIVELES DE CONOCIMIENTO",
-      "title": "PLANTILLA TÉCNICA: DE LA EVIDENCIA AL HALLAZGO (INSIGHT)",
-      "html": "\n        <div class=\"template-doc\">\n          <h4>MATRIZ DE PROCESAMIENTO COGNITIVO (GENIA FASE E)</h4>\n          <table class=\"template-table\">\n            <thead>\n              <tr>\n                <th>Nivel</th>\n                <th>Definición Metodológica</th>\n                <th>Criterio de Validación</th>\n                <th>Prompt de Asistencia IA</th>\n              </tr>\n            </thead>\n            <tbody>\n              <tr>\n                <td><strong>1. Evidencia</strong></td>\n                <td>Hecho crudo comprobable</td>\n                <td>¿Existe foto, recibo, medición o audio verificable?</td>\n                <td>Auditoría de hechos vs suposiciones</td>\n              </tr>\n              <tr>\n                <td><strong>2. Descubrimiento</strong></td>\n                <td>Patrón recurrente en la comunidad</td>\n                <td>¿Se repite en al menos el 50% de los observados?</td>\n                <td>Detección de correlaciones</td>\n              </tr>\n              <tr>\n                <td><strong>3. Causal del Problema</strong></td>\n                <td>Por qué la conducta humana persiste</td>\n                <td>¿Explica la costumbre o barrera del usuario?</td>\n                <td>5 Porqués y barreras cognitivas</td>\n              </tr>\n              <tr>\n                <td><strong>4. Hallazgo (Insight)</strong></td>\n                <td>Pista reveladora hacia la innovación</td>\n                <td>¿Abre una solución no evidente con alto impacto?</td>\n                <td>Formulación de hipótesis de oportunidad</td>\n              </tr>\n            </tbody>\n          </table>\n        </div>\n      "
+      "label": "VER PLANTILLA: E.1 DESCUBRIMIENTOS Y HALLAZGOS",
+      "title": "PLANTILLA E.1: DESCUBRIMIENTOS Y HALLAZGOS",
+      "html": "<div class=\"template-doc\"><div class=\"card-meta-line\">\n          <h3 class=\"template-name\">PLANTILLA E.1: DESCUBRIMIENTOS Y HALLAZGOS</h3>\n          <span class=\"tag-badge-solid\">MATRIZ DE CAUSALIDAD</span>\n        </div>\n\n        <div class=\"template-instructions\">\n          <strong>Diferencia clave:</strong> El <em>Descubrimiento</em> es el hecho comprobado con evidencia dura (pesajes, facturas, temperatura). El <em>Hallazgo</em> es la interpretación profunda de por qué ocurre y qué oportunidad abre.\n        </div>\n\n        <div class=\"grid-4\">\n          <div>\n            <label class=\"field-tag\" for=\"e_evidencia\">1. Evidencia Cruda</label>\n            <textarea id=\"e_evidencia\" placeholder=\"Ej: Liquidaciones: 3 de 10 tanques cosechados con lluvia fueron liquidados con precio castigado de pasilla.\"></textarea>\n          </div>\n          <div>\n            <label class=\"field-tag\" for=\"e_descubrimiento\">2. Descubrimiento (Hecho)</label>\n            <textarea id=\"e_descubrimiento\" placeholder=\"Ej: La masa cae a 14°C en la madrugada y desacelera la acidificación; el reloj de 18 horas ya no coincide con el punto de corte.\"></textarea>\n          </div>\n          <div>\n            <label class=\"field-tag\" for=\"e_causal\">3. Causal (Por qué pasa)</label>\n            <textarea id=\"e_causal\" placeholder=\"Ej: El caficultor no tiene termómetro sumergible resistente y se guía únicamente por el tacto empírico.\"></textarea>\n          </div>\n          <div>\n            <label class=\"field-tag\" for=\"e_hallazgo\">4. Hallazgo (Oportunidad)</label>\n            <textarea id=\"e_hallazgo\" placeholder=\"Ej: Si se instala una alarma sonora accionada por horas-grado térmicas, se eliminan los castigos de precio sin gastar en laboratorios.\"></textarea>\n          </div>\n        </div></div>"
     }
   },
   {
@@ -1671,9 +1770,9 @@
     ],
     "rigor": "CONTRATO BLINDADO: Si una idea posterior no cabe dentro de las limitantes y delimitantes del brief, se descarta automáticamente.",
     "templateBtn": {
-      "label": "VER PLANTILLA: THE BRIEF DE DISEÑO (CONTRATO DE UNA PÁGINA)",
-      "title": "PLANTILLA TÉCNICA: THE BRIEF CANÓNICO GENIA",
-      "html": "\n        <div class=\"template-doc\">\n          <h4>ESTRUCTURA FORMAL DE THE BRIEF (GENIA FASE E)</h4>\n          <table class=\"template-table\">\n            <thead>\n              <tr>\n                <th>Sección Canónica</th>\n                <th>Pregunta Clave que Resuelve</th>\n                <th>Validación Obligatoria</th>\n              </tr>\n            </thead>\n            <tbody>\n              <tr>\n                <td><strong>1. Resumen Factual</strong></td>\n                <td>¿Qué descubrimos y comprobamos en el territorio?</td>\n                <td>Respaldado por al menos 3 fuentes de evidencia directa.</td>\n              </tr>\n              <tr>\n                <td><strong>2. Oportunidad de Cambio</strong></td>\n                <td>¿Qué métrica de vida humana transformaremos?</td>\n                <td>Medible en % de ingresos, horas ahorradas o pérdidas evitadas.</td>\n              </tr>\n              <tr>\n                <td><strong>3. Limitantes Duras</strong></td>\n                <td>¿Qué restricciones físicas o económicas no podemos cambiar?</td>\n                <td>Identificación de clima, conectividad, costo y cultura.</td>\n              </tr>\n              <tr>\n                <td><strong>4. Delimitantes de Alcance</strong></td>\n                <td>¿Qué decidimos NO resolver en esta iteración?</td>\n                <td>Frontera clara IN / OUT para evitar dispersión técnica.</td>\n              </tr>\n            </tbody>\n          </table>\n        </div>\n      "
+      "label": "VER PLANTILLA: E.2 THE BRIEF DEL PROYECTO",
+      "title": "PLANTILLA E.2: THE BRIEF DEL PROYECTO",
+      "html": "<div class=\"template-doc\"><div class=\"card-meta-line\">\n          <h3 class=\"template-name\">PLANTILLA E.2: THE BRIEF DEL PROYECTO</h3>\n          <span class=\"tag-badge-orange\">CONTRATO DE DISEÑO</span>\n        </div>\n\n        <div class=\"template-instructions\">\n          <strong>Regla de Oro:</strong> El Brief delimita lo que el proyecto DEBE cumplir (determinantes) y las restricciones que NO se pueden cambiar (limitantes).\n        </div>\n\n        <div class=\"grid-2\" style=\"margin-bottom: 16px;\">\n          <div>\n            <label class=\"field-tag\" for=\"e_brief_resumen\">1. Resumen de la Situación Investigada</label>\n            <textarea id=\"e_brief_resumen\" placeholder=\"Resume en un párrafo los hechos confirmados en campo sobre el problema y la pérdida de valor...\"></textarea>\n          </div>\n          <div>\n            <label class=\"field-tag\" for=\"e_brief_oportunidad\">2. Oportunidad de Transformación (Verbo de cambio + Problema)</label>\n            <textarea id=\"e_brief_oportunidad\" placeholder=\"Ej: Estandarizar la fermentación anaeróbica para alcanzar >= 85 SCA + Deshidratar 100 kg/mes de cáscara para cafeterías de especialidad.\"></textarea>\n          </div>\n        </div>\n\n        <div class=\"grid-2\">\n          <div>\n            <label class=\"field-tag\" for=\"e_brief_determinantes\">3. Determinantes (Condiciones que DEBE cumplir la solución)</label>\n            <textarea id=\"e_brief_determinantes\" placeholder=\"Ej: • Operar 100% sin internet.&#10;• Limpieza rápida de mucílago en 10 segundos.&#10;• Inocuidad microbiológica para consumo humano.\"></textarea>\n          </div>\n          <div>\n            <label class=\"field-tag\" for=\"e_brief_limitantes\" style=\"color: var(--color-danger);\">4. Limitantes (Restricciones inamovibles de presupuesto y entorno)</label>\n            <textarea id=\"e_brief_limitantes\" placeholder=\"Ej: • Presupuesto máximo: $150.000 COP por kit.&#10;• Adaptable a tanques plásticos existentes.&#10;• Piezas disponibles en ferreterías del municipio.\"></textarea>\n          </div>\n        </div></div>"
     }
   },
   {
@@ -1736,9 +1835,9 @@
     ],
     "rigor": "SEPARAR QUÉ DE CÓMO: Prohibido hablar de 'app' o 'sensor' en la Propuesta de Valor. El valor es la transformación humana.",
     "templateBtn": {
-      "label": "VER PLANTILLA: FORMATO P.V. Y P.S. OFICIAL GENIA",
-      "title": "PLANTILLA TÉCNICA: FORMULACIÓN DE PROPUESTA DE VALOR Y SOLUCIÓN",
-      "html": "\n        <div class=\"template-doc\">\n          <h4>PLANTILLA OFICIAL GENIA: PROPUESTA DE VALOR Y SOLUCIÓN</h4>\n          <table class=\"template-table\">\n            <thead>\n              <tr>\n                <th>Dimensión</th>\n                <th>Definición Metodológica</th>\n                <th>Fórmula de Redacción</th>\n                <th>Ejemplo Caso Práctico</th>\n              </tr>\n            </thead>\n            <tbody>\n              <tr>\n                <td><strong>Propuesta de Valor (Qué)</strong></td>\n                <td>La transformación o alivio que experimenta el usuario</td>\n                <td>Permitir a [Usuario] lograr [Resultado de Oro] sin [Fricción Crítica]</td>\n                <td>Que ningún pedido se olvide y ningún fiado quede sin cobrar</td>\n              </tr>\n              <tr>\n                <td><strong>Propuesta de Solución (Cómo)</strong></td>\n                <td>El mecanismo técnico e instrumental que hace posible el valor</td>\n                <td>Dispositivo / Sistema compuesto por [A + B + C] que opera bajo [Condición]</td>\n                <td>Asistente de WhatsApp con IA que registra pedidos, deudas y avisos de inventario</td>\n              </tr>\n            </tbody>\n          </table>\n        </div>\n      "
+      "label": "VER PLANTILLA: N.1 RECONFIGURAR IDEAS",
+      "title": "PLANTILLA N.1: RECONFIGURAR IDEAS (SELECCIONAR Y PULIR)",
+      "html": "<div class=\"template-doc\"><div class=\"card-meta-line\">\n          <h3 class=\"template-name\">PLANTILLA N.1: RECONFIGURAR IDEAS (SELECCIONAR Y PULIR)</h3>\n          <span class=\"tag-badge-solid\">LAS 9 TÉCNICAS CREATIVAS</span>\n        </div>\n\n        <div class=\"template-instructions\">\n          Aplica al menos 3 de las técnicas (Invertir, Integrar, Extender, Diferenciar, Adicionar, Sustraer, Trasladar, Adjuntar, Exagerar) para mutar la idea inicial y reducir costos.\n        </div>\n\n        <div class=\"grid-3\" style=\"margin-bottom: 14px;\">\n          <div>\n            <label class=\"field-tag\" for=\"n_reconfig_tec1\">Técnica Seleccionada 1 (Ej: Sustraer)</label>\n            <input type=\"text\" id=\"n_reconfig_tec1\" placeholder=\"Ej: SUSTRAER\">\n            <label class=\"field-tag\" style=\"margin-top: 8px;\" for=\"n_reconfig_desc1\">Cómo se transformó la idea</label>\n            <textarea id=\"n_reconfig_desc1\" placeholder=\"Ej: Se eliminó la pantalla LCD y el chip WiFi; se reemplazó por un timbre sonoro piezoeléctrico. Bajó el costo de $450.000 a $42.000 COP.\"></textarea>\n          </div>\n\n          <div>\n            <label class=\"field-tag\" for=\"n_reconfig_tec2\">Técnica Seleccionada 2 (Ej: Trasladar)</label>\n            <input type=\"text\" id=\"n_reconfig_tec2\" placeholder=\"Ej: TRASLADAR\">\n            <label class=\"field-tag\" style=\"margin-top: 8px;\" for=\"n_reconfig_desc2\">Cómo se transformó la idea</label>\n            <textarea id=\"n_reconfig_desc2\" placeholder=\"Ej: Se trasladaron las trampas de agua (airlocks) de la cerveza artesanal para medir escape de CO2 como sensor analógico de fermentación.\"></textarea>\n          </div>\n\n          <div>\n            <label class=\"field-tag\" for=\"n_reconfig_tec3\">Técnica Seleccionada 3 (Ej: Integrar)</label>\n            <input type=\"text\" id=\"n_reconfig_tec3\" placeholder=\"Ej: INTEGRAR\">\n            <label class=\"field-tag\" style=\"margin-top: 8px;\" for=\"n_reconfig_desc3\">Cómo se transformó la idea</label>\n            <textarea id=\"n_reconfig_desc3\" placeholder=\"Ej: Se integró el café tostado con la pulpa en un 'Dúo de Origen' coordinado, duplicando el margen de venta por cada árbol cosechado.\"></textarea>\n          </div>\n        </div></div>"
     }
   },
   {
@@ -1796,12 +1895,7 @@
         }
       }
     ],
-    "rigor": "TOLERANCIA CERO: Si una idea falla el checklist del brief, se devuelve a la mesa de dibujo. No se pasa a prototipado por capricho.",
-    "templateBtn": {
-      "label": "VER PLANTILLA: CHECKLIST DE LA PRUEBA ÁCIDA",
-      "title": "PLANTILLA TÉCNICA: CHECKLIST CANÓNICO DE PRUEBA ÁCIDA GENIA",
-      "html": "\n        <div class=\"template-doc\">\n          <h4>CHECKLIST DE PRUEBA ÁCIDA ANTES DE PROTOTIPAR (GENIA FASE N)</h4>\n          <table class=\"template-table\">\n            <thead>\n              <tr>\n                <th>Criterio de Evaluación</th>\n                <th>Pregunta de Control</th>\n                <th>Estado Caso Práctico</th>\n                <th>Evidencia</th>\n              </tr>\n            </thead>\n            <tbody>\n              <tr>\n                <td><strong>1. Alineación al Dolor</strong></td>\n                <td>¿Ataca los pedidos olvidados y las deudas sin cobrar?</td>\n                <td><span style=\"color:#10b981;font-weight:700;\">APROBADO</span></td>\n                <td>Registro automático de cada pedido con nombre y dirección</td>\n              </tr>\n              <tr>\n                <td><strong>2. Factibilidad Rural</strong></td>\n                <td>¿Funciona en el celular Android básico que ya tienen?</td>\n                <td><span style=\"color:#10b981;font-weight:700;\">APROBADO</span></td>\n                <td>WhatsApp Business, sin instalar nada nuevo</td>\n              </tr>\n              <tr>\n                <td><strong>3. Resistencia Física</strong></td>\n                <td>¿Soporta el uso diario de la tienda y la falta de datos?</td>\n                <td><span style=\"color:#10b981;font-weight:700;\">APROBADO</span></td>\n                <td>Respaldo en papel cuando se va la luz o los datos</td>\n              </tr>\n              <tr>\n                <td><strong>4. Límite de Costo</strong></td>\n                <td>¿Cuesta menos de $150.000 COP empezar?</td>\n                <td><span style=\"color:#10b981;font-weight:700;\">APROBADO</span></td>\n                <td>Desde $0 con WhatsApp Business; versión automática por menos de $120.000 COP</td>\n              </tr>\n            </tbody>\n          </table>\n        </div>\n      "
-    }
+    "rigor": "TOLERANCIA CERO: Si una idea falla el checklist del brief, se devuelve a la mesa de dibujo. No se pasa a prototipado por capricho."
   },
   {
     "phase": "N",
@@ -1861,9 +1955,9 @@
     ],
     "rigor": "VIABILIDAD ANTES DE GASTAR: Un prototipo solo se construye si tiene un canal de distribución y un modelo de costo viable.",
     "templateBtn": {
-      "label": "VER PLANTILLA: LEAN CANVAS RURAL CANÓNICO",
-      "title": "PLANTILLA TÉCNICA: LEAN CANVAS ADAPTADO A INNOVACIÓN SOCIAL Y RURAL",
-      "html": "\n        <div class=\"template-doc\">\n          <h4>LEAN CANVAS RURAL (GENIA FASE N)</h4>\n          <table class=\"template-table\">\n            <thead>\n              <tr>\n                <th>Bloque</th>\n                <th>Enfoque Convencional</th>\n                <th>Adaptación Rural GENIA</th>\n                <th>Implementación Caso Práctico</th>\n              </tr>\n            </thead>\n            <tbody>\n              <tr>\n                <td><strong>1. Problema</strong></td>\n                <td>Ineficiencia técnica</td>\n                <td>Pérdida de sustento familiar por clima</td>\n                <td>4 pedidos perdidos y $180.000 COP sin cobrar al mes</td>\n              </tr>\n              <tr>\n                <td><strong>2. Solución</strong></td>\n                <td>App nueva que el cliente debe instalar</td>\n                <td>Asistente dentro del WhatsApp que ya usan</td>\n                <td>Vitrina: asistente de WhatsApp con IA</td>\n              </tr>\n              <tr>\n                <td><strong>3. Propuesta de Valor</strong></td>\n                <td>Software as a Service (SaaS)</td>\n                <td>Ventas sin pérdidas y deudas cobradas a tiempo</td>\n                <td>9 de cada 10 pedidos entregados bien en la prueba</td>\n              </tr>\n              <tr>\n                <td><strong>4. Canales</strong></td>\n                <td>Pauta digital en redes</td>\n                <td>El propio WhatsApp de la tienda</td>\n                <td>Letrero en la tienda: 'nuestro asistente atiende al instante'</td>\n              </tr>\n            </tbody>\n          </table>\n        </div>\n      "
+      "label": "VER PLANTILLA: N.2 LEAN CANVAS",
+      "title": "PLANTILLA N.2: LEAN CANVAS (REPLICO Y AMPLÍO)",
+      "html": "<div class=\"template-doc\"><div class=\"card-meta-line\">\n          <h3 class=\"template-name\">PLANTILLA N.2: LEAN CANVAS (REPLICO Y AMPLÍO)</h3>\n          <span class=\"tag-badge-orange\">MODELO DE VALOR</span>\n        </div>\n\n        <div class=\"template-instructions\">\n          Sintetiza la propuesta asegurando que la <strong>Propuesta de Valor (el QUÉ)</strong> calce perfectamente con la <strong>Propuesta de Solución (el CÓMO)</strong> y los canales reales.\n        </div>\n\n        <div class=\"grid-lean\" style=\"margin-bottom: 16px;\">\n          <div>\n            <label class=\"field-tag\" for=\"n_canvas_problema\">1. Problema</label>\n            <textarea id=\"n_canvas_problema\" placeholder=\"¿Cuáles son las necesidades no resueltas de tus clientes y de tu finca?\"></textarea>\n          </div>\n          <div>\n            <label class=\"field-tag\" for=\"n_canvas_solucion\">2. Propuesta de Solución (CÓMO)</label>\n            <textarea id=\"n_canvas_solucion\" placeholder=\"¿Qué características técnicas y herramientas maker componen la solución?\"></textarea>\n          </div>\n          <div>\n            <label class=\"field-tag\" for=\"n_canvas_pv\">3. Propuesta de Valor (QUÉ)</label>\n            <textarea id=\"n_canvas_pv\" placeholder=\"¿En qué consiste el producto, por qué es único y para quién es útil?\"></textarea>\n          </div>\n        </div>\n\n        <div class=\"grid-3\">\n          <div>\n            <label class=\"field-tag\" for=\"n_canvas_segmentos\">4. Segmento de Clientes</label>\n            <textarea id=\"n_canvas_segmentos\" placeholder=\"¿Quiénes son los compradores dispuestos a pagar por el producto?\"></textarea>\n          </div>\n          <div>\n            <label class=\"field-tag\" for=\"n_canvas_canales\">5. Canales de Distribución</label>\n            <textarea id=\"n_canvas_canales\" placeholder=\"¿Cómo llegarás a ellos? (Redes, venta directa, cafeterías aliadas)\"></textarea>\n          </div>\n          <div>\n            <label class=\"field-tag\" for=\"n_canvas_metricas\">6. Métricas Clave de Éxito</label>\n            <textarea id=\"n_canvas_metricas\" placeholder=\"¿Qué números demostrarán tracción? (Puntaje SCA, recompras, margen)\"></textarea>\n          </div>\n        </div></div>"
     }
   },
   {
@@ -1925,9 +2019,9 @@
     ],
     "rigor": "PROHIBIDO PROBAR SIN HIPÓTESIS: Todo prototipo debe responder a una pregunta técnica o de adopción previa con métrica de éxito.",
     "templateBtn": {
-      "label": "VER PLANTILLA: FICHA TÉCNICA DE PROTOTIPO Y EXPERIMENTO",
-      "title": "PLANTILLA TÉCNICA: DISEÑO DE EXPERIMENTO DE PROTOTIPADO",
-      "html": "\n        <div class=\"template-doc\">\n          <h4>FICHA DE DISEÑO DE EXPERIMENTO (GENIA FASE I)</h4>\n          <table class=\"template-table\">\n            <thead>\n              <tr>\n                <th>Campo</th>\n                <th>Definición Metodológica</th>\n                <th>Implementación Caso Práctico</th>\n              </tr>\n            </thead>\n            <tbody>\n              <tr>\n                <td><strong>1. Hipótesis a Validar</strong></td>\n                <td>¿Qué supuesto técnico o de adopción se pondrá a prueba?</td>\n                <td>Responder en menos de 1 minuto hará que 8 de cada 10 clientes completen el pedido</td>\n              </tr>\n              <tr>\n                <td><strong>2. Clase de Prototipo</strong></td>\n                <td>Físico, Digital (Mago de Oz), Experiencial</td>\n                <td>Digital de baja fidelidad (respuestas preparadas a mano en WhatsApp)</td>\n              </tr>\n              <tr>\n                <td><strong>3. Métrica de Éxito</strong></td>\n                <td>Criterio cuantitativo binario (Pasa / Falla)</td>\n                <td>Al menos 8 de cada 10 pedidos completados y entregados bien</td>\n              </tr>\n              <tr>\n                <td><strong>4. Asistencia con IA</strong></td>\n                <td>Herramienta utilizada para acelerar el desarrollo</td>\n                <td>IA para redactar el guion de respuestas + simulación de clientes</td>\n              </tr>\n            </tbody>\n          </table>\n        </div>\n      "
+      "label": "VER PLANTILLA: I.2 MAPA DE ITERACIÓN DE PROTOTIPOS",
+      "title": "PLANTILLA I.2: MAPA DE ITERACIÓN DE PROTOTIPOS",
+      "html": "<div class=\"template-doc\"><div class=\"card-meta-line\">\n          <h3 class=\"template-name\">PLANTILLA I.2: MAPA DE ITERACIÓN DE PROTOTIPOS</h3>\n          <span class=\"tag-badge-orange\">APRENDIZAJE Y REFINAMIENTO</span>\n        </div>\n\n        <div class=\"template-instructions\">\n          Documenta con honestidad las fallas del prototipo de bajo costo. Cada error detectado a tiempo evita pérdidas millonarias en el mercado.\n        </div>\n\n        <div class=\"grid-2\" style=\"margin-bottom: 16px;\">\n          <div>\n            <label class=\"field-tag\" for=\"i_iter_fallas\" style=\"color: var(--color-danger);\">Puntos a Modificar o Descartar (✗)</label>\n            <textarea id=\"i_iter_fallas\" placeholder=\"Ej: • El zumbador de 75 dB fue inaudible con la despulpadora encendida.&#10;• La rosca de PVC se trabó con azúcares del mucílago seco.\"></textarea>\n          </div>\n          <div>\n            <label class=\"field-tag\" for=\"i_iter_mejoras\" style=\"color: var(--color-success);\">Puntos a Mantener y Ajustes Aplicados (✓)</label>\n            <textarea id=\"i_iter_mejoras\" placeholder=\"Ej: • Se reemplazó por sirena de 95 dB de alta penetración.&#10;• Se incorporó acople rápido tipo bayoneta de 1/4 de giro en acero inoxidable.\"></textarea>\n          </div>\n        </div>\n\n        <div>\n          <label class=\"field-tag\" for=\"i_iter_citas\">Citas Textuales y Retroalimentación de Clientes o Catadores</label>\n          <textarea id=\"i_iter_citas\" placeholder='Ej: \"El lote Honey dio 86.25 puntos en mesa neutral. Si garantizan este perfil uniforme, les compro 5 sacos mensuales asegurados.\" — Q-Grader, Pereira.'></textarea>\n        </div></div>"
     }
   },
   {
@@ -1970,12 +2064,7 @@
         }
       }
     ],
-    "rigor": "NO PROGRAMAR ANTES DE TIEMPO: Prohibido construir software o firmware sin haber validado el valor percibido con Mago de Oz.",
-    "templateBtn": {
-      "label": "VER PLANTILLA: PROTOCOLO DE TESTEO MAGO DE OZ",
-      "title": "PLANTILLA TÉCNICA: GUIÓN METODOLÓGICO MAGO DE OZ",
-      "html": "\n        <div class=\"template-doc\">\n          <h4>PROTOCOLO OPERATIVO MAGO DE OZ (GENIA FASE I)</h4>\n          <table class=\"template-table\">\n            <thead>\n              <tr>\n                <th>Elemento</th>\n                <th>Rol / Tarea</th>\n                <th>Regla de Operación</th>\n              </tr>\n            </thead>\n            <tbody>\n              <tr>\n                <td><strong>Cara Pública (Front)</strong></td>\n                <td>Interfaz visible al usuario</td>\n                <td>Debe simular automatismo perfecto. Cero revelar el truco.</td>\n              </tr>\n              <tr>\n                <td><strong>Mago Oculto (Back)</strong></td>\n                <td>Miembro del equipo operando</td>\n                <td>Ejecuta la regla lógica en tiempo real con precisión milimétrica.</td>\n              </tr>\n              <tr>\n                <td><strong>Observador Neutro</strong></td>\n                <td>Miembro registrando reacciones</td>\n                <td>Anota expresiones faciales, tiempo de reacción y dudas del usuario.</td>\n              </tr>\n            </tbody>\n          </table>\n        </div>\n      "
-    }
+    "rigor": "NO PROGRAMAR ANTES DE TIEMPO: Prohibido construir software o firmware sin haber validado el valor percibido con Mago de Oz."
   },
   {
     "phase": "I",
@@ -2034,9 +2123,9 @@
     ],
     "rigor": "APRENDER DEL ERROR: Cada iteración debe documentar la causa raíz del fallo y la justificación técnica del cambio.",
     "templateBtn": {
-      "label": "VER PLANTILLA: MATRIZ DE FEEDBACK Y CUADRO DE ITERACIÓN",
-      "title": "PLANTILLA TÉCNICA: MATRIZ CANÓNICA DE ITERACIÓN GENIA",
-      "html": "\n        <div class=\"template-doc\">\n          <h4>MATRIZ DE APRENDIZAJE E ITERACIÓN (GENIA FASE I)</h4>\n          <table class=\"template-table\">\n            <thead>\n              <tr>\n                <th>Iteración</th>\n                <th>¿Qué se Probó?</th>\n                <th>¿Qué Falló? (Hallazgo)</th>\n                <th>¿Qué se Mejoró? (Ajuste)</th>\n                <th>Resultado de la semana de prueba</th>\n              </tr>\n            </thead>\n            <tbody>\n              <tr>\n                <td><strong>Versión 1</strong></td>\n                <td>Respuestas lentas y sin confirmar dirección</td>\n                <td>6 mensajes sin responder a las 7:00 p.m.; dos pedidos confundidos</td>\n                <td>Número de pedido visible (#12) y respuesta automática fuera de horario</td>\n                <td>4 pedidos perdidos en la semana</td>\n              </tr>\n              <tr>\n                <td><strong>Versión 2</strong></td>\n                <td>Vitrina v2 con confirmación automática</td>\n                <td>A Sofía se le olvidaba copiar la dirección en el cuaderno</td>\n                <td>Confirmación de marca y dirección en el primer mensaje</td>\n                <td>9 de 10 pedidos completados y entregados bien</td>\n              </tr>\n            </tbody>\n          </table>\n        </div>\n      "
+      "label": "VER PLANTILLA: I.1 MAPA DE HIPÓTESIS EXPERIMENTAL",
+      "title": "PLANTILLA I.1: MAPA DE HIPÓTESIS EXPERIMENTAL",
+      "html": "<div class=\"template-doc\"><div class=\"card-meta-line\">\n          <h3 class=\"template-name\">PLANTILLA I.1: MAPA DE HIPÓTESIS EXPERIMENTAL</h3>\n          <span class=\"tag-badge-solid\">DEFINICIÓN DE TEST</span>\n        </div>\n\n        <div class=\"template-instructions\">\n          No salgas a probar para \"ver qué pasa\". Define qué aspecto crítico pondrás a prueba y qué cifra concreta validará o refutará tu idea.\n        </div>\n\n        <div class=\"grid-4\">\n          <div>\n            <label class=\"field-tag\" for=\"i_hip_punto\">1. Punto Clave a Probar</label>\n            <textarea id=\"i_hip_punto\" placeholder=\"Ej: Sirena piezoeléctrica para aviso de corte térmico en el tanque.\"></textarea>\n          </div>\n          <div>\n            <label class=\"field-tag\" for=\"i_hip_requisito\">2. Requisitos Mínimos</label>\n            <textarea id=\"i_hip_requisito\" placeholder=\"Ej: Sonido audible a 80 metros con el motor de beneficio operando.\"></textarea>\n          </div>\n          <div>\n            <label class=\"field-tag\" for=\"i_hip_pregunta\">3. Pregunta de Investigación</label>\n            <textarea id=\"i_hip_pregunta\" placeholder=\"Ej: ¿El operario escucha la alarma mientras seca café en los paseros?\"></textarea>\n          </div>\n          <div>\n            <label class=\"field-tag\" for=\"i_hip_metrica\">4. Hipótesis (Métrica de Éxito)</label>\n            <textarea id=\"i_hip_metrica\" placeholder=\"Ej: Al menos 8 de cada 10 alertas son atendidas antes de 15 minutos.\"></textarea>\n          </div>\n        </div></div>"
     }
   },
   {
@@ -2044,70 +2133,6 @@
     "stepCode": "13",
     "blockName": "BLOQUE 5: FASE A — APLICA / MERCADO",
     "tag": "FASE A • APLICA • PASO 1",
-    "title": "ARQUITECTURA DE APLICACIÓN: IMPACTO REAL EN MERCADO",
-    "subtitle": "'No basta con tener una gran idea: hay que compartirla, comunicarla y hacerla realidad con un plan de evolución claro'.",
-    "gridClass": "three-cols",
-    "cards": [
-      {
-        "num": "01",
-        "title": "IMPLEMENTAR",
-        "body": "Plan de evolución a 90 días con hitos medibles, cronograma de despliegue, aliados clave y recursos presupuestados.",
-        "blueprint": "<svg viewBox='0 0 200 120' xmlns='http://www.w3.org/2000/svg'><defs></defs><rect x='6' y='6' width='188' height='104' fill='none' stroke='#c9c9c9' stroke-width='1' stroke-dasharray='2 4'/><path d='M6 14 V6 H14 M186 6 H194 V14 M194 102 V110 H186 M14 110 H6 V102' stroke='#a8a8a8' stroke-width='1.5' fill='none'/><g fill='none' stroke='#3a3a3a' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round' clip-path='url(#fr40)'><line x1='24' y1='62' x2='168' y2='62'/><polygon points='168,62 160,58 160,66' fill='#3a3a3a' stroke='none'/><g stroke='#1f00ff'><line x1='34' y1='62' x2='34' y2='44'/><polygon points='34,44 28,53 40,53' fill='#1f00ff' stroke='none'/></g><line x1='64' y1='62' x2='64' y2='80' stroke='#a8a8a8' stroke-width='1' stroke-dasharray='2 3'/><polygon points='64,80 58,71 70,71' fill='#3a3a3a' stroke='none'/><line x1='94' y1='62' x2='94' y2='44'/><polygon points='94,44 88,53 100,53' fill='#3a3a3a' stroke='none'/><line x1='124' y1='62' x2='124' y2='80' stroke='#a8a8a8' stroke-width='1' stroke-dasharray='2 3'/><polygon points='124,80 118,71 130,71' fill='#3a3a3a' stroke='none'/><line x1='152' y1='62' x2='152' y2='44'/><polygon points='152,44 146,53 158,53' fill='#3a3a3a' stroke='none'/><line x1='24' y1='70' x2='168' y2='70' stroke='#c9c9c9' stroke-width='1' stroke-dasharray='2 4'/><text x='34' y='40' font-family='cursive' font-size='7' fill='#777' stroke='none' text-anchor='middle'>M1</text><text x='94' y='40' font-family='cursive' font-size='7' fill='#777' stroke='none' text-anchor='middle'>M3</text><text x='152' y='40' font-family='cursive' font-size='7' fill='#777' stroke='none' text-anchor='middle'>M5</text></g><clipPath id='fr40'><rect x='7' y='7' width='186' height='102'/></clipPath></svg>",
-        "tags": [
-          "Plan Evolución",
-          "90 Días",
-          "Hitos"
-        ],
-        "detail": {
-          "tag": "FASE A • PASO 1.1 • PLAN DE IMPLEMENTACIÓN",
-          "title": "1. PLAN DE EVOLUCIÓN: DEL PROTOTIPO AL DESPLIEGUE",
-          "html": "\n            <div class=\"modal-split-view\">\n              <div class=\"modal-text-panel\">\n                <div class=\"methodology-block\">\n                  <strong>Metodología Oficial GENIA:</strong><br>\n                  Todo gran proyecto necesita un plan para no quedarse en una idea. El plan de evolución define cómo harás crecer la solución en el territorio, incluyendo un cronograma con metas claras, métricas de adopción verificables y el mapa de aliados necesarios.\n                </div>\n                <div class=\"ai-copilot-block\">\n                  <strong>Asistencialización con IA (Arquitecto de Planes de Despliegue):</strong><br>\n                  • <em>Prompt de Hoja de Ruta a 90 Días:</em> <div class=\"prompt-console\"><button class=\"prompt-copy-btn\" onclick=\"copyPrompt(event)\" title=\"Copiar prompt\">COPIAR</button>'Construye un cronograma de ejecución a 90 días dividido en 3 bloques de 30 días para implementar [solución]. Para cada bloque define: Objetivo central, entregable físico, indicador clave de desempeño (KPI) y riesgo mitigado.'</div>\n                </div>\n                <div class=\"case-applied-block\">\n                  <strong>Caso Aplicado (Don Hernando y Sofía):</strong>\n                  • Días 1-30: configurar Vitrina con las 5 preguntas frecuentes y la lista de los 30 clientes. • Días 31-60: operar una semana completa con pedidos reales y registrar cada falla. • Días 61-90: mostrar los resultados a los tenderos vecinos y buscar aliados.</div>\n              </div>\n              <div class=\"modal-graphic-panel\">\n                <svg viewBox=\"0 0 300 185\" xmlns=\"http://www.w3.org/2000/svg\">\n                  <!-- Cronograma 30-60-90 días -->\n                  <rect x=\"25\" y=\"30\" width=\"75\" height=\"100\" rx=\"6\" fill=\"#eff6ff\" stroke=\"#1f00ff\" stroke-width=\"1.5\"/>\n                  <text x=\"62\" y=\"55\" text-anchor=\"middle\" font-family=\"Bebas Neue\" font-size=\"16\" fill=\"#1f00ff\">30 DÍAS</text>\n                  <text x=\"62\" y=\"78\" text-anchor=\"middle\" font-family=\"Archivo\" font-weight=\"700\" font-size=\"8\" fill=\"#1e3a8a\">PILOTO TIENDA</text>\n                  <text x=\"62\" y=\"98\" text-anchor=\"middle\" font-family=\"Archivo\" font-size=\"7.5\" fill=\"#475569\">5 tiendas</text>\n                  <text x=\"62\" y=\"112\" text-anchor=\"middle\" font-family=\"Archivo\" font-size=\"7.5\" fill=\"#475569\">en prueba</text>\n\n                  <rect x=\"112\" y=\"30\" width=\"75\" height=\"100\" rx=\"6\" fill=\"#fff7ed\" stroke=\"#ff622b\" stroke-width=\"1.5\"/>\n                  <text x=\"150\" y=\"55\" text-anchor=\"middle\" font-family=\"Bebas Neue\" font-size=\"16\" fill=\"#ff622b\">60 DÍAS</text>\n                  <text x=\"150\" y=\"78\" text-anchor=\"middle\" font-family=\"Archivo\" font-weight=\"700\" font-size=\"8\" fill=\"#7c2d12\">REGISTRO DE VENTAS</text>\n                  <text x=\"150\" y=\"98\" text-anchor=\"middle\" font-family=\"Archivo\" font-size=\"7.5\" fill=\"#475569\">30 clientes con</text>\n                  <text x=\"150\" y=\"112\" text-anchor=\"middle\" font-family=\"Archivo\" font-size=\"7.5\" fill=\"#475569\">puntaje &ge; 85</text>\n\n                  <rect x=\"200\" y=\"30\" width=\"75\" height=\"100\" rx=\"6\" fill=\"#f0fdf4\" stroke=\"#10b981\" stroke-width=\"1.5\"/>\n                  <text x=\"237\" y=\"55\" text-anchor=\"middle\" font-family=\"Bebas Neue\" font-size=\"16\" fill=\"#10b981\">90 DÍAS</text>\n                  <text x=\"237\" y=\"78\" text-anchor=\"middle\" font-family=\"Archivo\" font-weight=\"700\" font-size=\"8\" fill=\"#14532d\">ESCALA BARRIO</text>\n                  <text x=\"237\" y=\"98\" text-anchor=\"middle\" font-family=\"Archivo\" font-size=\"7.5\" fill=\"#475569\">10 tiendas</text>\n                  <text x=\"237\" y=\"112\" text-anchor=\"middle\" font-family=\"Archivo\" font-size=\"7.5\" fill=\"#475569\">aliadas</text>\n\n                  <rect x=\"35\" y=\"145\" width=\"230\" height=\"22\" rx=\"4\" fill=\"#0f172a\"/>\n                  <text x=\"150\" y=\"160\" text-anchor=\"middle\" font-family=\"Archivo\" font-weight=\"700\" font-size=\"8.5\" fill=\"#ffffff\">RUTA CRÍTICA DE VALIDACIÓN EN TERRITORIO</text>\n                </svg>\n                <span class=\"graphic-caption\">CRONOGRAMA DE ESCALAMIENTO Y VALIDACIÓN</span>\n              </div>\n            </div>\n          "
-        }
-      },
-      {
-        "num": "02",
-        "title": "COMUNICAR (PITCH)",
-        "body": "Tips oficiales GENIA: menos es más, di el pitch en voz alta, pásalo por una IA para feedback y equilibra emoción con datos.",
-        "blueprint": "<svg viewBox='0 0 200 120' xmlns='http://www.w3.org/2000/svg'><defs></defs><rect x='6' y='6' width='188' height='104' fill='none' stroke='#c9c9c9' stroke-width='1' stroke-dasharray='2 4'/><path d='M6 14 V6 H14 M186 6 H194 V14 M194 102 V110 H186 M14 110 H6 V102' stroke='#a8a8a8' stroke-width='1.5' fill='none'/><g fill='none' stroke='#3a3a3a' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round' clip-path='url(#fr41)'><polygon points='60,45 122,28 122,88 60,71'/><rect x='46' y='45' width='14' height='26' rx='3'/><line x1='70' y1='71' x2='70' y2='94'/><line x1='70' y1='94' x2='86' y2='94'/><path d='M134 40 Q148 58 134 76'/><g stroke='#1f00ff'><path d='M146 32 Q166 58 146 84'/></g><path d='M60 45 L60 71' stroke='#a8a8a8' stroke-width='1' stroke-dasharray='2 3'/></g><clipPath id='fr41'><rect x='7' y='7' width='186' height='102'/></clipPath></svg>",
-        "tags": [
-          "Pitch Canónico",
-          "Emoción + Datos",
-          "Ensayar"
-        ],
-        "detail": {
-          "tag": "FASE A • PASO 1.2 • COMUNICACIÓN DE IMPACTO",
-          "title": "2. LA COMUNICACIÓN ESTRATÉGICA: EMOCIÓN + DATOS",
-          "html": "\n            <div class=\"modal-split-view\">\n              <div class=\"modal-text-panel\">\n                <div class=\"methodology-block\">\n                  <strong>Metodología Oficial GENIA:</strong><br>\n                  Los 3 secretos de un buen pitch según GENIA:<br>\n                  • <em>Menos es más:</em> Pocas diapositivas con datos clave y sin tecnicismos innecesarios.<br>\n                  • <em>Ensaya una y otra vez:</em> Di tu pitch en voz alta frente a una IA de voz para medir timing, cadencia y tono.<br>\n                  • <em>Emoción + datos:</em> La historia humana de Sofía abre corazones, pero los datos de ventas y cobranza abren billeteras y acuerdos.\n                </div>\n                <div class=\"ai-copilot-block\">\n                  <strong>Asistencialización con IA (Entrenador de Pitch Oral):</strong><br>\n                  • <em>Prompt de Ensayo en Voz Alta:</em> <div class=\"prompt-console\"><button class=\"prompt-copy-btn\" onclick=\"copyPrompt(event)\" title=\"Copiar prompt\">COPIAR</button>'Voy a decirte la transcripción de mi pitch de 3 minutos. Evalúa: 1) Gancho inicial en los primeros 20 segundos, 2) Claridad de la propuesta de valor, 3) Credibilidad de la tracción, 4) Fuerza del pedido final (Call to Action).'</div>\n                </div>\n                <div class=\"case-applied-block\">\n                  <strong>Caso Aplicado (Don Hernando y Sofía):</strong>\n                  Estructura del pitch: \"el mes pasado Sofía perdió 4 pedidos y olvidó cobrar $180.000\" (gancho humano) → \"con el asistente, 9 de cada 10 pedidos se entregan bien\" (dato real de la prueba) → \"necesitamos aliados para que 10 tiendas del municipio lo usen\" (pedido concreto).</div>\n              </div>\n              <div class=\"modal-graphic-panel\">\n                <svg viewBox=\"0 0 300 185\" xmlns=\"http://www.w3.org/2000/svg\">\n                  <!-- Balanza Emoción + Datos -->\n                  <rect x=\"35\" y=\"30\" width=\"110\" height=\"95\" rx=\"6\" fill=\"#fff7ed\" stroke=\"#ff622b\" stroke-width=\"1.5\"/>\n                  <text x=\"90\" y=\"55\" text-anchor=\"middle\" font-size=\"20\">❤️</text>\n                  <text x=\"90\" y=\"80\" text-anchor=\"middle\" font-family=\"Archivo\" font-weight=\"700\" font-size=\"9\" fill=\"#ff622b\">EMOCIÓN (50%)</text>\n                  <text x=\"90\" y=\"98\" text-anchor=\"middle\" font-family=\"Archivo\" font-size=\"7.5\" fill=\"#7c2d12\">Historia de vida</text>\n                  <text x=\"90\" y=\"112\" text-anchor=\"middle\" font-family=\"Archivo\" font-size=\"7.5\" fill=\"#7c2d12\">Arraigo campesino</text>\n\n                  <rect x=\"155\" y=\"30\" width=\"110\" height=\"95\" rx=\"6\" fill=\"#eff6ff\" stroke=\"#1f00ff\" stroke-width=\"1.5\"/>\n                  <text x=\"210\" y=\"55\" text-anchor=\"middle\" font-size=\"20\">📊</text>\n                  <text x=\"210\" y=\"80\" text-anchor=\"middle\" font-family=\"Archivo\" font-weight=\"700\" font-size=\"9\" fill=\"#1f00ff\">DATOS (50%)</text>\n                  <text x=\"210\" y=\"98\" text-anchor=\"middle\" font-family=\"Archivo\" font-size=\"7.5\" fill=\"#1e3a8a\">9 de 10 pedidos</text>\n                  <text x=\"210\" y=\"112\" text-anchor=\"middle\" font-family=\"Archivo\" font-size=\"7.5\" fill=\"#1e3a8a\">+35% Liquidación</text>\n\n                  <rect x=\"35\" y=\"145\" width=\"230\" height=\"22\" rx=\"4\" fill=\"#0f172a\"/>\n                  <text x=\"150\" y=\"160\" text-anchor=\"middle\" font-family=\"Archivo\" font-weight=\"700\" font-size=\"8.5\" fill=\"#ffffff\">EQUILIBRIO NARRATIVO PERSUASIVO</text>\n                </svg>\n                <span class=\"graphic-caption\">FÓRMULA GENIA: EMOCIÓN + EVIDENCIA MATERIAL</span>\n              </div>\n            </div>\n          "
-        }
-      },
-      {
-        "num": "03",
-        "title": "ESCALAR",
-        "body": "Crecimiento territorial: replicar el modelo en otras tiendas del barrio y del municipio.",
-        "blueprint": "<svg viewBox='0 0 200 120' xmlns='http://www.w3.org/2000/svg'><defs></defs><rect x='6' y='6' width='188' height='104' fill='none' stroke='#c9c9c9' stroke-width='1' stroke-dasharray='2 4'/><path d='M6 14 V6 H14 M186 6 H194 V14 M194 102 V110 H186 M14 110 H6 V102' stroke='#a8a8a8' stroke-width='1.5' fill='none'/><g fill='none' stroke='#3a3a3a' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round' clip-path='url(#fr42)'><circle cx='66' cy='62' r='8' fill='#1f00ff' stroke='none'/><circle cx='66' cy='62' r='8'/><circle cx='130' cy='34' r='6'/><circle cx='150' cy='70' r='6'/><circle cx='118' cy='96' r='6'/><circle cx='150' cy='100' r='0'/><line x1='74' y1='58' x2='124' y2='37'/><line x1='74' y1='65' x2='144' y2='69'/><line x1='72' y1='69' x2='112' y2='93'/><circle cx='66' cy='62' r='26' stroke='#a8a8a8' stroke-width='1' stroke-dasharray='3 4'/><circle cx='66' cy='62' r='44' stroke='#c9c9c9' stroke-width='1' stroke-dasharray='2 4'/><polygon points='150,22 146,30 154,30' fill='#1f00ff' stroke='none'/><line x1='132' y1='30' x2='146' y2='24' stroke='#1f00ff' stroke-width='1.5'/></g><clipPath id='fr42'><rect x='7' y='7' width='186' height='102'/></clipPath></svg>",
-        "tags": [
-          "Escalamiento",
-          "Redes Comunitarias"
-        ],
-        "detail": {
-          "tag": "FASE A • PASO 1.3 • ESCALABILIDAD",
-          "title": "3. ESCALABILIDAD SOCIAL Y RETENCIÓN DE VALOR",
-          "html": "\n            <div class=\"modal-split-view\">\n              <div class=\"modal-text-panel\">\n                <div class=\"methodology-block\">\n                  <strong>Metodología Oficial GENIA:</strong><br>\n                  Escalar no es necesariamente vender millones en una tienda retail; en proyectos de impacto social, escalar significa lograr que otras comunidades adopten, repliquen y adapten el modelo con autonomía técnica.\n                </div>\n                <div class=\"ai-copilot-block\">\n                  <strong>Asistencialización con IA (Manual de Replicabilidad):</strong><br>\n                  • <em>Prompt de Código Abierto Rural:</em> <div class=\"prompt-console\"><button class=\"prompt-copy-btn\" onclick=\"copyPrompt(event)\" title=\"Copiar prompt\">COPIAR</button>'Genera una guía paso a paso para que cualquier tendero del municipio pueda configurar su propio asistente de ventas por WhatsApp.'</div>\n                </div>\n                <div class=\"case-applied-block\">\n                  <strong>Escala Caso Práctico:</strong>\n                  Capacitar a 2 jóvenes del municipio como \"configuradores de asistentes de ventas\" que ayuden a otras tiendas de barrio a armar el suyo, creando un servicio local.</div>\n              </div>\n              <div class=\"modal-graphic-panel\">\n                <svg viewBox=\"0 0 300 185\" xmlns=\"http://www.w3.org/2000/svg\">\n                  <!-- Red concéntrica de expansión -->\n                  <circle cx=\"150\" cy=\"80\" r=\"55\" fill=\"none\" stroke=\"#cbd5e1\" stroke-width=\"1.5\" stroke-dasharray=\"4,4\"/>\n                  <circle cx=\"150\" cy=\"80\" r=\"38\" fill=\"none\" stroke=\"#94a3b8\" stroke-width=\"1.5\"/>\n                  <circle cx=\"150\" cy=\"80\" r=\"20\" fill=\"#1f00ff\"/>\n                  <text x=\"150\" y=\"85\" text-anchor=\"middle\" font-family=\"Archivo\" font-weight=\"700\" font-size=\"8.5\" fill=\"#ffffff\">MUNICIPIO</text>\n\n                  <circle cx=\"150\" cy=\"25\" r=\"10\" fill=\"#ff622b\"/>\n                  <circle cx=\"150\" cy=\"135\" r=\"10\" fill=\"#ff622b\"/>\n                  <circle cx=\"95\" cy=\"80\" r=\"10\" fill=\"#ff622b\"/>\n                  <circle cx=\"205\" cy=\"80\" r=\"10\" fill=\"#ff622b\"/>\n\n                  <text x=\"150\" y=\"165\" text-anchor=\"middle\" font-family=\"Archivo\" font-weight=\"700\" font-size=\"8.5\" fill=\"#0f172a\">REPLICABILIDAD POR NODOS COMUNITARIOS</text>\n                </svg>\n                <span class=\"graphic-caption\">EXPANSIÓN POR REDES Y ASOCIACIONES RURALES</span>\n              </div>\n            </div>\n          "
-        }
-      }
-    ],
-    "rigor": "DE LA TEORÍA AL HECHO: Una innovación no termina en la maqueta; culmina cuando genera un cambio medible en la vida de la comunidad.",
-    "templateBtn": {
-      "label": "VER PLANTILLA: PLAN DE EVOLUCIÓN A 90 DÍAS",
-      "title": "PLANTILLA TÉCNICA: HOJA DE RUTA Y PLAN DE EVOLUCIÓN GENIA",
-      "html": "\n        <div class=\"template-doc\">\n          <h4>HOJA DE RUTA DE IMPLEMENTACIÓN Y ADOPCIÓN (GENIA FASE A)</h4>\n          <table class=\"template-table\">\n            <thead>\n              <tr>\n                <th>Periodo</th>\n                <th>Objetivo Crítico</th>\n                <th>Entregable Territorial</th>\n                <th>Responsable / Aliado</th>\n              </tr>\n            </thead>\n            <tbody>\n              <tr>\n                <td><strong>Días 1 a 30</strong></td>\n                <td>Vitrina configurado con las 5 preguntas frecuentes y los 30 clientes</td>\n                <td>Registro automático de pedidos de una semana completa</td>\n                <td>Sofía con apoyo del equipo</td>\n              </tr>\n              <tr>\n                <td><strong>Días 31 a 60</strong></td>\n                <td>Semana de operación con pedidos reales sin fallas</td>\n                <td>Cero pedidos olvidados y 100% de fiados cobrados</td>\n                <td>Don Hernando revisando domicilios y cobranza</td>\n              </tr>\n              <tr>\n                <td><strong>Días 61 a 90</strong></td>\n                <td>10 tiendas del municipio interesadas en usarlo</td>\n                <td>Aliados para replicar Vitrina en otras tiendas del municipio</td>\n                <td>Tenderos aliados del municipio</td>\n              </tr>\n            </tbody>\n          </table>\n        </div>\n      "
-    }
-  },
-  {
-    "phase": "A",
-    "stepCode": "14",
-    "blockName": "BLOQUE 5: FASE A — APLICA / MERCADO",
-    "tag": "FASE A • APLICA • PASO 2",
     "title": "PLAN DE EVOLUCIÓN A 90 DÍAS & SPARRING CON IA",
     "subtitle": "'Pídele a una IA que genere preguntas como si fuera un cliente o inversionista escéptico para blindar tu propuesta'.",
     "gridClass": "three-cols",
@@ -2162,16 +2187,16 @@
     ],
     "rigor": "SIN PIEDAD AL PROBAR: Si la IA o el evaluador descubre un agujero financiero o técnico, el proyecto no sale al mercado.",
     "templateBtn": {
-      "label": "VER PLANTILLA: PROTOCOLO DE SPARRING HOSTIL CON IA",
-      "title": "PLANTILLA TÉCNICA: PROTOCOLO DE SPARRING CON IA",
-      "html": "\n        <div class=\"template-doc\">\n          <h4>PROTOCOLO DE SPARRING Y AUDITORÍA CRÍTICA CON IA (GENIA FASE A)</h4>\n          <table class=\"template-table\">\n            <thead>\n              <tr>\n                <th>Rol Asumido por la IA</th>\n                <th>Ángulo de Ataque Crítico</th>\n                <th>Respuesta Obligatoria del Equipo</th>\n              </tr>\n            </thead>\n            <tbody>\n              <tr>\n                <td><strong>Inversionista Desconfiado</strong></td>\n                <td>¿Por qué no usar una app nueva que nadie conoce?</td>\n                <td>Vitrina funciona dentro del WhatsApp que los clientes ya usan</td>\n              </tr>\n              <tr>\n                <td><strong>Técnico Escéptico</strong></td>\n                <td>¿Qué pasa si el cliente manda un audio en vez de texto?</td>\n                <td>Soporte para audios y confirmación automática de cada pedido</td>\n              </tr>\n              <tr>\n                <td><strong>Comprador Exigente</strong></td>\n                <td>¿Quién me garantiza que el pedido llega completo y a tiempo?</td>\n                <td>Cada pedido queda registrado con número, dirección y hora de entrega</td>\n              </tr>\n            </tbody>\n          </table>\n        </div>\n      "
+      "label": "VER PLANTILLA: A.1 PLAN DE EVOLUCIÓN (90 DÍAS)",
+      "title": "PLANTILLA A.1: PLAN DE EVOLUCIÓN (CRONOGRAMA A 90 DÍAS)",
+      "html": "<div class=\"template-doc\"><div class=\"card-meta-line\">\n          <h3 class=\"template-name\">PLANTILLA A.1: PLAN DE EVOLUCIÓN (CRONOGRAMA A 90 DÍAS)</h3>\n          <span class=\"tag-badge-solid\">HOJA DE RUTA OPERATIVA</span>\n        </div>\n\n        <div class=\"template-instructions\">\n          Define entregables tangibles para salir de la informalidad en 3 meses. Cada hito debe tener responsable directo y estatus medible.\n        </div>\n\n        <div class=\"grid-3\">\n          <div>\n            <label class=\"field-tag\" for=\"a_plan_mes1\">Mes 01 • Montaje e Instrumentación</label>\n            <textarea id=\"a_plan_mes1\" placeholder=\"• Actividad: Equipar 3 tanques con acople rápido y túnel solar.&#10;• Entregable: 3 kits operando en finca.&#10;• Responsable: Don Hernando / Equipo.&#10;• Estatus: En proceso.\"></textarea>\n          </div>\n          <div>\n            <label class=\"field-tag\" for=\"a_plan_mes2\">Mes 02 • Certificación Sensorial Neutral</label>\n            <textarea id=\"a_plan_mes2\" placeholder=\"• Actividad: Catación ciega y pruebas de inocuidad de cáscara.&#10;• Entregable: Ficha técnica SCA >= 85 puntos.&#10;• Responsable: Sofía (Barista).&#10;• Estatus: Programado.\"></textarea>\n          </div>\n          <div>\n            <label class=\"field-tag\" for=\"a_plan_mes3\">Mes 03 • Comercialización y Cobro</label>\n            <textarea id=\"a_plan_mes3\" placeholder=\"• Actividad: Despacho a las 3 primeras cafeterías aliadas.&#10;• Entregable: 50 Dúos BioAroma facturados.&#10;• Responsable: Sofía.&#10;• Estatus: Pendiente.\"></textarea>\n          </div>\n        </div></div>"
     }
   },
   {
     "phase": "A",
-    "stepCode": "15",
+    "stepCode": "14",
     "blockName": "BLOQUE 5: FASE A — APLICA / MERCADO",
-    "tag": "FASE A • APLICA • PASO 3",
+    "tag": "FASE A • APLICA • PASO 2",
     "title": "EL GUION DE PITCH EN 6 PASOS • DE LA IDEA AL IMPACTO",
     "subtitle": "'Estructurar la presentación con rigor: del dolor humano a la tracción probada y el llamado a la acción'.",
     "gridClass": "three-cols",
@@ -2224,14 +2249,14 @@
     ],
     "rigor": "PRECISIÓN DEL PEDIDO: Prohibido cerrar un pitch sin un pedido específico con cifras, aliados y fecha límite.",
     "templateBtn": {
-      "label": "VER PLANTILLA: ESTRUCTURA FORMAL DE PITCH EN 6 PASOS",
-      "title": "PLANTILLA TÉCNICA: GUIÓN MAESTRO DE PITCH GENIA",
-      "html": "\n        <div class=\"template-doc\">\n          <h4>GUIÓN MAESTRO DE PITCH EN 6 PASOS (GENIA FASE A)</h4>\n          <table class=\"template-table\">\n            <thead>\n              <tr>\n                <th>Paso Canónico</th>\n                <th>Tiempo Estimado</th>\n                <th>Objetivo Psicológico en la Audiencia</th>\n                <th>Ejemplo Caso Práctico</th>\n              </tr>\n            </thead>\n            <tbody>\n              <tr>\n                <td><strong>1. Motivación</strong></td>\n                <td>0:00 - 0:25</td>\n                <td>Empatía y dolor humano vivo</td>\n                <td>Sofía pierde pedidos y deudas por atender sola el celular</td>\n              </tr>\n              <tr>\n                <td><strong>2. Evidencia</strong></td>\n                <td>0:25 - 0:50</td>\n                <td>Demostración de que el problema es masivo</td>\n                <td>A la mitad de las tiendas del barrio les pasa lo mismo</td>\n              </tr>\n              <tr>\n                <td><strong>3. La Idea</strong></td>\n                <td>0:50 - 1:20</td>\n                <td>Claridad y sorpresa con la solución</td>\n                <td>Vitrina: asistente de ventas por WhatsApp con IA</td>\n              </tr>\n              <tr>\n                <td><strong>4. Proceso Maker</strong></td>\n                <td>1:20 - 1:50</td>\n                <td>Credibilidad: aprendimos cacharreando</td>\n                <td>De la prueba manual a 9 de cada 10 pedidos bien</td>\n              </tr>\n              <tr>\n                <td><strong>5. Tracción</strong></td>\n                <td>1:50 - 2:15</td>\n                <td>Validación externa incontrovertible</td>\n                <td>Ventas por WhatsApp +20% en la semana de prueba</td>\n              </tr>\n              <tr>\n                <td><strong>6. Llamado a Acción</strong></td>\n                <td>2:15 - 2:45</td>\n                <td>Cierre asertivo con pedido urgente</td>\n                <td>Aliados para llevar Vitrina a 10 tiendas del municipio</td>\n              </tr>\n            </tbody>\n          </table>\n        </div>\n      "
+      "label": "VER PLANTILLA: A.2 GUION DE PITCH EN 6 PASOS",
+      "title": "PLANTILLA A.2: GUION DE PITCH EN 6 PASOS",
+      "html": "<div class=\"template-doc\"><div class=\"card-meta-line\">\n          <h3 class=\"template-name\">PLANTILLA A.2: GUION DE PITCH EN 6 PASOS</h3>\n          <span class=\"tag-badge-orange\">PRESENTACIÓN CORTA DE IMPACTO</span>\n        </div>\n\n        <div class=\"template-instructions\">\n          El guion de 3 minutos para convencer a cooperativas, bancos o compradores internacionales combinando dolor campesino y rigor científico.\n        </div>\n\n        <div class=\"grid-2\" style=\"margin-bottom: 14px;\">\n          <div>\n            <label class=\"field-tag\" for=\"a_pitch_p1\">1. Motivación y Dolor Real</label>\n            <textarea id=\"a_pitch_p1\" placeholder=\"Ej: Durante 3 generaciones mi familia desechó el 80% del fruto del café y perdió cosechas por el clima.\"></textarea>\n          </div>\n          <div>\n            <label class=\"field-tag\" for=\"a_pitch_p2\">2. Hallazgos y Evidencia de Investigación</label>\n            <textarea id=\"a_pitch_p2\" placeholder=\"Ej: La caída térmica nocturna arruina el pH; la pulpa limpia tiene mayor potencial antioxidante que el té verde.\"></textarea>\n          </div>\n        </div>\n\n        <div class=\"grid-2\" style=\"margin-bottom: 14px;\">\n          <div>\n            <label class=\"field-tag\" for=\"a_pitch_p3\">3. La Idea y Propuesta de Valor</label>\n            <textarea id=\"a_pitch_p3\" placeholder=\"Ej: Microlotes estandarizados a 86 puntos SCA con sensor maker + Infusión de cáscara en túnel solar pasivo.\"></textarea>\n          </div>\n          <div>\n            <label class=\"field-tag\" for=\"a_pitch_p4\">4. Proceso de Prototipado y Aprendizaje</label>\n            <textarea id=\"a_pitch_p4\" placeholder=\"Ej: Probamos desde botellas plásticas hasta el kit actual de $42.000 COP, validado en cata ciega con baristas.\"></textarea>\n          </div>\n        </div>\n\n        <div class=\"grid-2\">\n          <div>\n            <label class=\"field-tag\" for=\"a_pitch_p5\">5. Prototipo Final y Tracción Comprobada</label>\n            <textarea id=\"a_pitch_p5\" placeholder=\"Ej: Aquí está el café catado en 86 puntos y nuestras primeras 50 unidades vendidas en tiendas de Pereira.\"></textarea>\n          </div>\n          <div>\n            <label class=\"field-tag\" for=\"a_pitch_p6\">6. Visión de Futuro y Llamado a la Acción</label>\n            <textarea id=\"a_pitch_p6\" placeholder=\"Ej: Buscamos $12 millones COP para equipar los tanques y secaderos de las 15 familias de nuestra asociación.\"></textarea>\n          </div>\n        </div></div>"
     }
   },
   {
     "phase": "A",
-    "stepCode": "16",
+    "stepCode": "15",
     "blockName": "BLOQUE 6: CIERRE & MANIFIESTO MAKER",
     "tag": "CIERRE • CULTURA MAKER • CIENCIA CIUDADANA",
     "title": "EL MANIFIESTO MAKER: DE CONSUMIDORES A CREADORES",
@@ -2286,12 +2311,7 @@
         }
       }
     ],
-    "rigor": "LLAMADO A LA ACCIÓN DEFINITIVO: La masterclass concluye con el compromiso de cada equipo de salir a prototipar en su territorio.",
-    "templateBtn": {
-      "label": "VER EL MANIFIESTO MAKER COMPLETO (PDF RESUMEN)",
-      "title": "EL MANIFIESTO DEL INNOVADOR MAKER • CENTRO CALDAS",
-      "html": "\n        <div class=\"template-doc\">\n          <h4>MANIFIESTO DEL CREADOR RURAL (GENIA & CENTRO CALDAS)</h4>\n          <ol style=\"line-height: 1.8; margin-top: 15px; font-size: 14px;\">\n            <li><strong>El territorio manda:</strong> Nunca enamorarse de la tecnología; enamorarse del problema humano que sufre la comunidad.</li>\n            <li><strong>Pensar con las manos:</strong> Si una idea no se puede dibujar o maquetar en 2 horas, aún no se entiende con claridad.</li>\n            <li><strong>Cacharreo sin vergüenza:</strong> Fallar rápido y barato con cartón y PVC es diez veces más inteligente que fracasar caro en un piloto tardío.</li>\n            <li><strong>La IA es copiloto:</strong> Usar la inteligencia artificial para investigar, generar variaciones y realizar sparring; pero mantener el criterio y la empatía en manos humanas.</li>\n            <li><strong>Apropiación social:</strong> El conocimiento no nos pertenece si no transforma la dignidad y la economía de quienes labran la tierra.</li>\n          </ol>\n        </div>\n      "
-    }
+    "rigor": "LLAMADO A LA ACCIÓN DEFINITIVO: La masterclass concluye con el compromiso de cada equipo de salir a prototipar en su territorio."
   }
 ];
 
