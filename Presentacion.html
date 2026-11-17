@@ -19,6 +19,7 @@
       --color-patch-orange: #ff622b;
       --color-pure-white: #ffffff;
       --color-fog-gray: #f4f5f8;
+      --color-visited-gray: #e2e5ee;
       --color-bone: #f9f9fc;
       --color-mist: #e2e4ed;
       --color-gridline: rgba(255, 255, 255, 0.14);
@@ -279,15 +280,15 @@
 
     /* ESTADO VISITADO: el modal de esta tarjeta ya se abrió (se limpia con tecla R) */
     .explore-card.visited-card {
-      background: var(--color-fog-gray);
-      border-color: #98a0b3;
+      background: var(--color-visited-gray);
+      border-color: #868fa6;
       color: var(--color-ink-light);
       box-shadow: 0 4px 14px rgba(0, 0, 0, 0.16);
     }
 
     .explore-card.visited-card:hover {
       border-color: var(--color-patch-orange);
-      background: var(--color-fog-gray);
+      background: var(--color-visited-gray);
     }
 
     .explore-card > div {
