@@ -277,6 +277,19 @@
       box-shadow: 0 12px 28px rgba(0, 0, 0, 0.38);
     }
 
+    /* ESTADO VISITADO: el modal de esta tarjeta ya se abrió (se limpia con tecla R) */
+    .explore-card.visited-card {
+      background: var(--color-fog-gray);
+      border-color: #98a0b3;
+      color: var(--color-ink-light);
+      box-shadow: 0 4px 14px rgba(0, 0, 0, 0.16);
+    }
+
+    .explore-card.visited-card:hover {
+      border-color: var(--color-patch-orange);
+      background: var(--color-fog-gray);
+    }
+
     .explore-card > div {
       display: flex;
       flex-direction: column;
@@ -2294,6 +2307,7 @@
 
     let currentIdx = 0;
     let isZoomed = false;
+    const visitedCards = new Set(); // memoria de modales abiertos ("slide:tarjeta")
 
     const BLOCK_NAMES = [
       "BLOQUE 1: BIENVENIDA & CONTEXTO",
@@ -2351,7 +2365,7 @@
       if (data.isGeniaHeroSlide) {
         // RENDERIZADO ESPECIAL PARA SLIDE 02: LETRAS G E N I A GIGANTES Y PREDOMINANTES
         cardsHtml = data.cards.map((c, cIdx) => `
-          <div class="explore-card genia-hero-card" onclick="openDetail(${idx}, ${cIdx})">
+          <div class="explore-card genia-hero-card${isVisitedCard(idx, cIdx) ? ' visited-card' : ''}" onclick="openDetail(${idx}, ${cIdx})">
             <div>
               <div class="explore-card-top">
                 <span class="explore-card-num genia-hero-letter">${c.num}</span>
@@ -2369,7 +2383,7 @@
       } else {
         // RENDERIZADO ESTÁNDAR DE TARJETAS INTERACTIVAS
         cardsHtml = data.cards.map((c, cIdx) => `
-          <div class="explore-card" onclick="openDetail(${idx}, ${cIdx})">
+          <div class="explore-card${isVisitedCard(idx, cIdx) ? ' visited-card' : ''}" onclick="openDetail(${idx}, ${cIdx})">
             <div>
               <div class="explore-card-top">
                 <span class="explore-card-num">${c.num}</span>
@@ -2415,6 +2429,9 @@
     // ABRIR DETALLE POR CLIC EN TARJETA
     function openDetail(slideIdx, cardIdx) {
       const cardData = SLIDES_DATA[slideIdx].cards[cardIdx];
+      visitedCards.add(slideIdx + ':' + cardIdx);
+      const cardEls = document.querySelectorAll('#slide-canvas .explore-card');
+      if (cardEls[cardIdx]) cardEls[cardIdx].classList.add('visited-card');
       document.getElementById('insp-tag').innerText = cardData.detail.tag;
       document.getElementById('insp-title').innerText = cardData.detail.title;
       document.getElementById('insp-body').innerHTML = cardData.detail.html;
@@ -2539,6 +2556,16 @@
       }
     }
 
+    function isVisitedCard(slideIdx, cardIdx) {
+      return visitedCards.has(slideIdx + ':' + cardIdx);
+    }
+
+    // REINICIAR MEMORIA DE MODALES ABIERTOS (TECLA R) • TODAS LAS TARJETAS AL COLOR ORIGINAL
+    function resetVisitedCards() {
+      visitedCards.clear();
+      document.querySelectorAll('.explore-card.visited-card').forEach(el => el.classList.remove('visited-card'));
+    }
+
     function nextSlide() {
       hideInspector();
       if (currentIdx < SLIDES_DATA.length - 1) {
@@ -2564,7 +2591,7 @@
       }
     }
 
-    // EVENTOS DE TECLADO (Z PARA ZOOM, FLECHAS, ESC)
+    // EVENTOS DE TECLADO (Z PARA ZOOM, FLECHAS, ESC, R REINICIA MODALES VISITADOS)
     document.addEventListener('keydown', (e) => {
       const overlay = document.getElementById('inspector-overlay');
       const isOverlayOpen = (overlay && overlay.style.display === 'flex');
@@ -2581,6 +2608,8 @@
         } else if (e.key === 'ArrowLeft') {
           e.preventDefault();
           prevSlide();
+        } else if (e.key === 'r' || e.key === 'R') {
+          resetVisitedCards();
         }
       }
     });
